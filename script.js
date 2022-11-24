@@ -44,8 +44,8 @@ const currentDiv = document.getElementById("container");
 
 let globaltotal = 0;
 
-    window.addEventListener('mouseover', function(e) {
-        console.log(e.target)
+
+    window.addEventListener('mouseover', function(e) { //listens for mouseover on grid divs and sets color to black
         for (let i = 0; i < globaltotal; i++) {
             if (e.target === document.getElementById(`div${i}`)) {
                 const j = document.getElementById(`div${i}`)
@@ -54,6 +54,9 @@ let globaltotal = 0;
 
         }
     })
+
+
+
 
     function createBoxes(numberPerRow) {
         const currentDiv = document.querySelector('#container');
@@ -77,7 +80,27 @@ let globaltotal = 0;
       createBoxes(16);
 
 
+function clearBoxes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+document.querySelector('.gridbutton').addEventListener('click', function() {
+    // let a = prompt("What size?");
+    clearBoxes(currentDiv)
+    createBoxes(16)
+})
+    // window.addEventListener('mousedown', function(e){
+    //     console.log(e.target)
+    //     if (e.currentTarget === document.getElementsByClassName(`gridbutton`)) {
+    //     a()
+    //     // else {
+    //     //     return;
+    //     // }
+    //     }});
     
+
   // create a new div element
  
   // and give it some content
