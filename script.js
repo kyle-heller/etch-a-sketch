@@ -24,23 +24,9 @@
 // You should be able to enter 64 and have a brand new 64x64 grid pop up without changing the total amount of pixels used.
 
 
-{/* <div style="background-color: grey; display: inline-block; flex: 1; margin: 10px;">this</div>
-<div style="background-color: grey; display: inline-block; flex: 1; margin: 10px;">this</div>
-<div style="background-color: grey; display: inline-block; flex: 1; margin: 10px;">this</div>
-<div style="background-color: grey; display: inline-block; flex: 1; margin: 10px">this</div> */}
-
-
 const currentDiv = document.getElementById("container");
 
-// horizontal()
 
-// function horizontal() { //create horizontal section of grid
-//     for (let i = 0; i < 256; i++){
-//     const newDiv = document.createElement("div");
-//     // newDiv.setAttribute("id", `div${i}`);
-//     // newDiv.setAttribute("style", `display: inline-block`);
-//     currentDiv.appendChild(newDiv);
-//     }
 
 let globaltotal = 0;
 
@@ -96,20 +82,5 @@ document.querySelector('.gridbutton').addEventListener('click', function() {
     return;
     }
 })
-    // window.addEventListener('mousedown', function(e){
-    //     console.log(e.target)
-    //     if (e.currentTarget === document.getElementsByClassName(`gridbutton`)) {
-    //     a()
-    //     // else {
-    //     //     return;
-    //     // }
-    //     }});
-    
 
-  // create a new div element
- 
-  // and give it some content
 
-  // add the text node to the newly created div
-
-  // add the newly created element and its content into the DOM
