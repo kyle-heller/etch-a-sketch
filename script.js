@@ -42,14 +42,28 @@ const currentDiv = document.getElementById("container");
 //     currentDiv.appendChild(newDiv);
 //     }
 
+let globaltotal = 0;
+
+    window.addEventListener('mouseover', function(e) {
+        console.log(e.target)
+        for (let i = 0; i < globaltotal; i++) {
+            if (e.target === document.getElementById(`div${i}`)) {
+                const j = document.getElementById(`div${i}`)
+                j.style.backgroundColor = 'black'
+        }
+
+        }
+    })
+
     function createBoxes(numberPerRow) {
         const currentDiv = document.querySelector('#container');
         const total = (numberPerRow * numberPerRow) + numberPerRow;
         const mod = numberPerRow + 1;
-      
+        globaltotal = total
+
         for (let i = 1; i < total; i++) {
           const newDiv = document.createElement('div');
-      
+          newDiv.setAttribute("id", `div${i}`)
           if (i % mod === 0) {
             newDiv.style.cssText = "border: 0; height: 0; width: 100%";
           } else {

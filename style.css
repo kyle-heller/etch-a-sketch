@@ -11,3 +11,7 @@ flex-wrap: wrap;
 #container > div {
 
 }
+
+.gridbutton {
+    width: 100px;
+}
