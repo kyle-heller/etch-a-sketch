@@ -87,9 +87,14 @@ function clearBoxes(parent) {
 }
 
 document.querySelector('.gridbutton').addEventListener('click', function() {
-    // let a = prompt("What size?");
+    let a = prompt("What size?");
+    if ((a < 36) && (a > 0)) {
     clearBoxes(currentDiv)
-    createBoxes(16)
+    createBoxes(Number(a))
+    }
+    else if (a > 36) {
+    return;
+    }
 })
     // window.addEventListener('mousedown', function(e){
     //     console.log(e.target)
