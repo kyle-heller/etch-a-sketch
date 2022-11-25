@@ -26,18 +26,26 @@
 
 const currentDiv = document.getElementById("container");
 
+function generateRGB() {
+const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+const r = randomBetween(0, 255);
+const g = randomBetween(0, 255);
+const b = randomBetween(0, 255);
+  return `rgb(${r}, ${g}, ${b})`
+}
 
 
 let globaltotal = 0;
 
 
-    window.addEventListener('mouseover', function(e) { //listens for mouseover on grid divs and sets color to black
+    window.addEventListener('mouseover', function(e) { //listens for mouseover on grid divs and sets color to color
         for (let i = 0; i < globaltotal; i++) {
-            if (e.target === document.getElementById(`div${i}`)) {
-                const j = document.getElementById(`div${i}`)
-                j.style.backgroundColor = 'black'
+            if (e.target === document.getElementById(`divcube${i}`)) {
+                const j = document.getElementById(`divcube${i}`)
+                // j.style.backgroundColor = 'black' //for black
+                
+              j.style.backgroundColor = generateRGB() //for random RGB 
         }
-
         }
     })
 
@@ -48,23 +56,24 @@ let globaltotal = 0;
         const currentDiv = document.querySelector('#container');
         const total = (numberPerRow * numberPerRow) + numberPerRow;
         const mod = numberPerRow + 1;
+        let boxSize = (750 / (numberPerRow)) + 'px';
         globaltotal = total
 
         for (let i = 1; i < total; i++) {
           const newDiv = document.createElement('div');
-          newDiv.setAttribute("id", `div${i}`)
+          newDiv.setAttribute("id", `divcube${i}`)
           if (i % mod === 0) {
             newDiv.style.cssText = "border: 0; height: 0; width: 100%";
           } else {
-            newDiv.style.cssText = "border: 1px solid black; height: 25px; width: 25px";
+            newDiv.style.cssText = `border: 1px solid black; height: ${boxSize}; width: ${boxSize}`;
           }
       
           currentDiv.appendChild(newDiv);
         }
       }
-      
-      createBoxes(16);
 
+createBoxes(16);
+      
 
 function clearBoxes(parent) {
     while (parent.firstChild) {
@@ -74,11 +83,11 @@ function clearBoxes(parent) {
 
 document.querySelector('.gridbutton').addEventListener('click', function() {
     let a = prompt("What size?");
-    if ((a < 36) && (a > 0)) {
+    if ((a < 100) && (a > 0)) {
     clearBoxes(currentDiv)
     createBoxes(Number(a))
     }
-    else if (a > 36) {
+    else if (a > 100) {
     return;
     }
 })

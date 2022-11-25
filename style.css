@@ -2,6 +2,12 @@
 box-sizing: border-box;
   }
 
+body {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+  height: 750px;
+}
 
 #container {
 display: flex;
@@ -9,6 +15,9 @@ flex-wrap: wrap;
 }
 
 #container > div {
+}
+
+#container > #divcube {
 
 }
 
